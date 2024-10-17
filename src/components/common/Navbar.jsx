@@ -7,6 +7,7 @@ import logo from "../../assets/images/logo/footerlogo.png";
 import HambarIcon from '../../assets/images/hambar.svg';
 import { useFixedSection } from '@/app/context/FixedSectionContext';
 import { FiPhoneCall } from "react-icons/fi";
+import Sidebar from './MegaMenuSidebar';
 
 const Navbar = () => {
   const params = useParams();
@@ -141,7 +142,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav style={{ transform: isScrollInFloorPlans ? 'translateY(-100%)' : '' }} className={`${megaMenu ? 'bg-[#000000b1] backdrop-blur px-5 sm:px-10 cmd:px-14 lg:px-6 xl:px-16 3xl:px-4 pt-2 sm:pt-6 sm:pb-10' : ''}  w-full z-10 transition-all duration-500 ${isSticky ? `fixed top-0 bg-[#273B31] sm:bg-[#000000ef] shadow-lg py-1 z-50 ${isVisible ? 'translate-y-0' : `${megaMenu ? '' : '-translate-y-full'}`} duration-500` : ` absolute top-0 left-0  duration-500 py-2 lg:py-1 xl:py-4`} flex justify-center items-center duration-500`}>
+    <nav style={{ transform: isScrollInFloorPlans ? 'translateY(-100%)' : '' }} className={`${megaMenu ? 'bg-[#000000b1] backdrop-blur px-5 sm:px-10 cmd:px-14 lg:px-6 xl:px-16 3xl:px-4 pt-2 sm:pt-6 sm:pb-10' : ''}  w-full z-10 transition-all duration-500 ${isSticky ? `fixed top-0 bg-[#11508f] sm:bg-[#000000ef] shadow-lg py-1 z-50 ${isVisible ? 'translate-y-0' : `${megaMenu ? '' : '-translate-y-full'}`} duration-500` : ` absolute top-0 left-0  duration-500 py-2 lg:py-1 xl:py-4`} flex justify-center items-center duration-500`}>
       <div className={` duration-500  xl:py-1 lg:py-2.5 w-full 2xl:container flex justify-between lg:justify-around 3xl:justify-between ${megaMenu ? 'items-end xl:items-center duration-1000 px-0' : 'items-center duration-1000 px-1.5 cxs:px-5 xl:px-0'} duration-1000 mx-2`}>
         <Link href="#" aria-label="Back to homepage" className={`${isSticky ? 'w-[170px] h-[60px] xl:w-[180px] duration-1000' : 'w-[150px] bxxs:w-[160px] xs:w-[170px] cxs:w-[180px] h-[50px] sm:w-[200px] sm:h-[60px] xl:w-[206px] xl:h-[50px] duration-1000'} flex relative`}>
           <Image
@@ -151,7 +152,7 @@ const Navbar = () => {
             alt='sushma elementa logo'
           />
         </Link>
-        <ul className={`w-full  ${megaMenu ? 'items-start w-[90%] xl:w-[85%] 2xl:w-[85%] justify-center pl-[20px] xl:pl-[30px] 2xl:pl-[50px] ' : 'items-center justify-between xl:justify-end 2xl:justify-between xl:gap-6 2xl:gap-0 w-[80%] xl:w-[77%] 2xl:w-[76%]  pl-16 xl:pl-5 3xl:px-0'} h-full duration-500 hidden  lg:flex `}>
+        <ul className={`w-full  ${megaMenu ? 'items-start w-[90%] xl:w-[85%] 2xl:w-[85%] justify-center pl-[20px] xl:pl-[30px] 2xl:pl-[50px] ' : 'items-center justify-around xl:justify-end 2xl:justify-between xl:gap-6 2xl:gap-0 w-[80%] xl:w-[77%] 2xl:w-[76%]  pl-16 xl:pl-5 3xl:px-0'} h-full duration-500 hidden  lg:flex `}>
           {[
             {
               href: '#About-Us',
@@ -246,7 +247,7 @@ const Navbar = () => {
               </div>
             </li>
           ))}
-          <li className={`${megaMenu ? 'self-start' : 'self-center'} `}>
+          <li className={`${megaMenu ? 'self-start' : 'self-center'} flex lg:hidden`}>
             {!megaMenu && (
               <button className="flex justify-end  pl-[20px] xl:pl-[40px] relative top-1">
                 <Image onClick={() => setMegaMenu(!megaMenu)} src={HambarIcon} alt='bar' />
@@ -265,6 +266,8 @@ const Navbar = () => {
           <Image src={HambarIcon} alt='bar' />
         </button>
       </div>
+
+      <Sidebar open={isSidebarOpen} setOpen={setIsSidebarOpen} />
     </nav>
   );
 };

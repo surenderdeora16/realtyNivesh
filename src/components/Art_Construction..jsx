@@ -4,11 +4,11 @@ function Art_Construction() {
 
     return (
         <div id='rcih' className='sectionsGap lg:container mx-auto text-center '>
-            <div className={`text-center text-[#11508F]`}>
+            <div className={`text-center text-[#4B4B4B]`}>
                 <h2 className='lg:text-[40px] text-[22px] sm:text-[32px] md:text-[37px] font-supera800 uppercase'>
                     Real Estate In tricity
                 </h2>
-                <p className={`px-1 lg:text-[18px] text-[12px] sm:text-[14px] md:text-[16px] font-supera700 text-[#686868]`}>
+                <p className={`px-1 lg:text-[18px] text-[12px] sm:text-[14px] md:text-[16px] font-supera700 text-[#686868] uppercase`}>
                     Find Residential, Commercial & industrial  Properties
                 </p>
                 <p className={`mt-1 px-1 text-[10px] sm:text-[12px] md:text-[12px] lg:text-[14px] font-supera700 text-[#686868]`}>

@@ -28,59 +28,60 @@ export default function Home() {
       <WhyShusma />
       <div id='our-service' className='mt-10'>
         <div className="w-full bg-[#11508f] py-4 flex">
-          <div className=' table whitespace-nowrap font-supera700 text-3xl uppercase tracking-wide text-[#fd6502] px-3'>
+          <div className=' table whitespace-nowrap font-supera700 text-base sm:text-lg md:text-2xl lg:text-3xl uppercase cxs:tracking-wide text-[#fd6502] px-1 cxs:px-3'>
             Our Service Locations
           </div>
           <Marquee>
-            <div className='flex items-center gap-x-6'>
-              <div className='text-white uppercase font-supera600 text-[22px] flex items-center gap-x-2'>
-                <div className='min-w-[25px] min-h-[25px] relative'>
+            <div className='flex items-center'>
+              <div className='ml-8 text-white uppercase font-supera600 text-sm sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] flex items-center gap-x-2'>
+                <div className='min-w-[20px] min-h-[20px] sm:min-w-[25px] sm:min-h-[25px] relative'>
                   <Image src={OurserviceIcn} fill />
                 </div>
                 Zirakpur
               </div>
-              <div className='text-white uppercase font-supera600 text-[22px] flex items-center gap-x-2'>
-                <div className='min-w-[25px] min-h-[25px] relative'>
+              <div className='ml-8 text-white uppercase font-supera600 text-sm sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] flex items-center gap-x-2'>
+                <div className='min-w-[20px] min-h-[20px] sm:min-w-[25px] sm:min-h-[25px] relative'>
                   <Image src={OurserviceIcn} fill />
                 </div>
                 Mohali
               </div>
-              <div className='text-white uppercase font-supera600 text-[22px] flex items-center gap-x-2'>
-                <div className='min-w-[25px] min-h-[25px] relative'>
+              <div className='ml-8 text-white uppercase font-supera600 text-sm sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] flex items-center gap-x-2'>
+                <div className='min-w-[20px] min-h-[20px] sm:min-w-[25px] sm:min-h-[25px] relative'>
                   <Image src={OurserviceIcn} fill />
                 </div>
                 New Chandigarh
               </div>
-              <div className='text-white uppercase font-supera600 text-[22px] flex items-center gap-x-2'>
-                <div className='min-w-[25px] min-h-[25px] relative'>
+              <div className='ml-8 text-white uppercase font-supera600 text-sm sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] flex items-center gap-x-2'>
+                <div className='min-w-[20px] min-h-[20px] sm:min-w-[25px] sm:min-h-[25px] relative'>
                   <Image src={OurserviceIcn} fill />
                 </div>
                 Panchkula
               </div>
-              <div className='text-white uppercase font-supera600 text-[22px] flex items-center gap-x-2'>
-                <div className='min-w-[25px] min-h-[25px] relative'>
+              <div className='ml-8 text-white uppercase font-supera600 text-sm sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] flex items-center gap-x-2'>
+                <div className='min-w-[20px] min-h-[20px] sm:min-w-[25px] sm:min-h-[25px] relative'>
                   <Image src={OurserviceIcn} fill />
                 </div>
                 Zirakpur
               </div>
-              <div className='text-white uppercase font-supera600 text-[22px] flex items-center gap-x-2'>
-                <div className='min-w-[25px] min-h-[25px] relative'>
+              <div className='ml-8 text-white uppercase font-supera600 text-sm sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] flex items-center gap-x-2'>
+                <div className='min-w-[20px] min-h-[20px] sm:min-w-[25px] sm:min-h-[25px] relative'>
                   <Image src={OurserviceIcn} fill />
                 </div>
                 Mohali
               </div>
-              <div className='text-white uppercase font-supera600 text-[22px] flex items-center gap-x-2'>
-                <div className='min-w-[25px] min-h-[25px] relative'>
+              <div className='ml-8 text-white uppercase font-supera600 text-sm sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] flex items-center gap-x-2'>
+                <div className='min-w-[20px] min-h-[20px] sm:min-w-[25px] sm:min-h-[25px] relative'>
                   <Image src={OurserviceIcn} fill />
                 </div>
                 New Chandigarh
               </div>
-              <div className='pr-6 text-white uppercase font-supera600 text-[22px] flex items-center gap-x-2'>
-                <div className='min-w-[25px] min-h-[25px] relative'>
+              <div className='ml-8 text-white uppercase font-supera600 text-sm sm:text-[16px] md:text-[18px] lg:text-[20px] 2xl:text-[22px] flex items-center gap-x-2'>
+                <div className='min-w-[20px] min-h-[20px] sm:min-w-[25px] sm:min-h-[25px] relative'>
                   <Image src={OurserviceIcn} fill />
                 </div>
                 Panchkula
               </div>
+              
             </div>
           </Marquee>
         </div>
@@ -89,12 +90,12 @@ export default function Home() {
       <WhyRealtyNivesh />
       <BoardMember />
       <div className="sectionsGap">
-        <div style={{ position: 'relative' }} className="w-full lg:h-[466px] h-[180px] sm:h-[230px] md:h-[300px] relative">
+        <div style={{ position: 'relative' }} className="w-full lg:h-[500px] h-[180px] sm:h-[230px] md:h-[300px] relative">
           <img
             src="/images/3e8b373a6df6547a50ae2cb382d18a16.png"
             alt="bannerImg"
             style={{ position: 'relative' }}
-            className="w-full h-full object-cover relative"
+            className="w-full h-full object-left cmd:object-center object-cover relative"
           />
         </div>
       </div>

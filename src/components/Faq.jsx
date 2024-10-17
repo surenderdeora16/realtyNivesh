@@ -48,14 +48,14 @@ function Faq() {
         <div id='FAQ' className='pt-5  sm:pt-0'>
             <Heading
                 heading="FAQ’s"
-                className="text-[#1E6DA4]"
+                className="text-[#4B4B4B]"
                 color="text-[#5A5454]"
             />
             <div className='-mt-4 md:-mt-6 lg:-mt-6 lg:flex justify-between items-center lg:h-[426px]  '>
                 <div className='lg:basis-[68%] px-2  lg:ps-24 w-full h-full overflow-y-auto flex flex-col justify-between faq_scroll_bar'>
                     {
                         faqData.map((item, index) => (
-                            <div key={index} className={`border cursor-pointer text-[#1E6DA4] rounded-[4px]  px-3 md:px-6 flex justify-between items-center mb-2  ${isActiveFaq == index ? "bg-[#1E6DA4] text-white py-4" : "border-[#FD6502] text-[#1E6DA4] bg-white py-4  font-supera800"}`} onClick={() => { handleFaqToggle(index)}}>
+                            <div key={index} className={`border cursor-pointer text-[#1E6DA4] rounded-[4px]  px-3 md:px-6 flex justify-between items-center mb-2  ${isActiveFaq == index ? "bg-[#1E6DA4] text-white py-4" : "border-[#FD6502] text-[#515151] bg-white py-4  font-supera800"}`} onClick={() => { handleFaqToggle(index)}}>
                                 <div className='w-full xl:basis-[80%]' >
                                     <p className='sm:text-[15.96px]  text-[12px] cxs:text-[13px]   font-supera700 tracking-wide'>
                                         {index + 1}. {item.faqQues}

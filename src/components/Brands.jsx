@@ -7,11 +7,13 @@ import img3 from "../assets/images/associateimg3.jpg"
 import img4 from "../assets/images/associateimg4.png"
 import img5 from "../assets/images/associateimg5.png"
 import img6 from "../assets/images/associateimg6.png"
+import img7 from "../assets/images/associateimg7.png"
+import img8 from "../assets/images/associateimg8.jpg"
 import Image from 'next/image';
 
 export default function Brands() {
 
-    let brand = [img1, img2, img3, img4, img5, img6, img1, img2, img3, img4, img5, img6, img1, img2, img3, img4, img5, img6]
+    let brand = [img7, img4, img6, img8, img5, img2, img3, img1, img7, img4, img6, img8, img5, img2, img3, img1]
 
     return (
         <div className="sectionsGap  lg:max-w-[1250px] sm:mx-auto">

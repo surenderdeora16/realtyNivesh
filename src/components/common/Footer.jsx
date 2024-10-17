@@ -23,6 +23,7 @@ function Footer() {
                             />
                         </div>
                     </Link>
+                    <h6 className='mt-4 font-supera600 text-[17px] tracking-wide whitespace-nowrap flex justify-center text-white text-center'><span className='capitalize'>Rera No</span> <b className='font-supera600 px-0.5'>-</b> <p className='uppercase'> PBRERA-SAS79-REA1009</p></h6>
                     <hr className='max-w-[1257px] mx-5 lg:mx-auto border-[#787777] mt-[35px] mb-[25px]' />
                     <div className='flex flex-col gap-y-[38px]'>
                         <ul className='flex justify-center flex-wrap lg:flex-nowrap gap-3 md:gap-x-6 lg:gap-x-6 xl:gap-x-7 2xl:gap-x-9 px-2 sm:px-0'>
@@ -104,7 +105,7 @@ function Footer() {
                     <hr className=' max-w-[1257px] mx-5 lg:mx-auto border-[#787777] mt-[50px] mb-[15px]' />
                     <div className='flex flex-col cmd:flex-row justify-center items-center gap-2 cmd:gap-0 px-3'>
                         <div className='flex items-center justify-center'>
-                            <span className='font-supera700 text-[15px] cxs:text-[19px] lg:text-[23px] text-white uppercase tracking-wide'>Sales Partner</span>
+                            <span className='font-supera700 text-[15px] cxs:text-[19px] lg:text-[23px] text-white uppercase tracking-wide'>Corporate Office</span>
                             &nbsp;
                             &nbsp;
                             <span>
@@ -125,12 +126,12 @@ function Footer() {
             </div>
             <div className='flex px-4 cxs:px-[20px] xl:px-[60px] flex-col sm:flex-row justify-center sm:justify-between gap-1 sm:gap-0 pt-[7.27px] pb-[14px] bg-[#F1F1F1]'>
                 <div className='text-[#1E6DA4] flex gap-3 md:gap-5 lg:gap-10 justify-center sm:justify-normal'>
-                    <Link href={`/disclaimer`} className='font-supera700 text-[10px] cxs:text-[13px] sm:text-[10px] cmd:text-[13px] lg:text-[15px]'>Disclaimer</Link>
-                    <Link href={`/terms-and-conditions`} className='font-supera700 text-[10px] cxs:text-[13px] sm:text-[10px] cmd:text-[13px] lg:text-[15px]'>Term & conditions</Link>
-                    <Link href={`/privacy-policy`} className='font-supera700 text-[10px] cxs:text-[13px] sm:text-[10px] cmd:text-[13px] lg:text-[15px]'>Privacy policy</Link>
+                    <Link href={`/disclaimer`} className='font-supera600 text-[10px] cxs:text-[13px] sm:text-[10px] cmd:text-[13px] lg:text-[15px]'>Disclaimer</Link>
+                    <Link href={`/terms-and-conditions`} className='font-supera600 text-[10px] cxs:text-[13px] sm:text-[10px] cmd:text-[13px] lg:text-[15px]'>Term & conditions</Link>
+                    <Link href={`/privacy-policy`} className='font-supera600 text-[10px] cxs:text-[13px] sm:text-[10px] cmd:text-[13px] lg:text-[15px]'>Privacy policy</Link>
                 </div>
                 <div>
-                    <p className='text-center sm:text-left font-lato text-[#1E6DA4] font-bold  text-[10px] cxs:text-[13px] sm:text-[10px] cmd:text-[13px] lg:text-[15px] capitalize'>© Copyright 2024 Realty Nivesh All Rights Reserved</p>
+                    <p className='text-center sm:text-left text-[#1E6DA4] font-supera600  text-[10px] cxs:text-[13px] sm:text-[10px] cmd:text-[13px] lg:text-[15px] capitalize'>© Copyright 2024 Realty Nivesh All Rights Reserved</p>
                 </div>
             </div>
         </div>

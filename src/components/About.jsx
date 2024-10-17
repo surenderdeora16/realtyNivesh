@@ -9,10 +9,10 @@ function About() {
     const [hasAnimated, setHasAnimated] = useState(false);
     const [readMore, setReadMore] = useState(false)
     const [tapData, setTapData] = useState([
-        { count: 0.0, text: "Completed Project" },
-        { count: 0, text: "Residential Project" },
-        { count: 0, text: "Commercial Project" },
-        { count: 0, text: "Upcoming" },
+        { count: 0.0, text: "customers satisfaction" },
+        { count: 0, text: "Brokerage Fees*" },
+        { count: 0, text: "Experiences" },
+        { count: 0, text: "Expert members" },
     ]);
     const aboutRef = useRef(null);
 
@@ -73,7 +73,7 @@ function About() {
     };
 
     return (
-        <div id='About-Us' className='xl:container mx-auto flex flex-col-reverse md:flex-row justify-center  md:justify-evenly gap-x-5 lg:gap-x-0 px-5 lg:px-28 items-center lg:items-start sectionsGap' >
+        <div id='About-Us' className='2xl:container mx-auto flex flex-col-reverse md:flex-row justify-center  md:justify-evenly gap-x-5 lg:gap-x-0 px-5 lg:px-20 2xl:px-28 items-center lg:items-start sectionsGap' >
             <div className=' hidden md:flex w-[40%] relative justify-center items-center lg:justify-center lg:-ml-14 mt-16 md:mt-0'>
                 <div className='w-[400px] xl:w-[450px] mx-auto relative'>
                     <Image
@@ -90,7 +90,7 @@ function About() {
             <div className='w-full md:w-[60%] space-y-3 lg:space-y-4'>
                 <div>
                     <p className='text-[#1E6DA4] md:text-start text-center'>
-                        <span className='text-[#FD6502] font-supera700 text-[30px]'>About us</span> <br className='hidden md:inline' />
+                        <span className='text-[#11508F] font-supera700 text-[30px]'>About us</span> <br className='hidden md:inline' />
                         <span className='text-[#474747] text-[22px] cxs:text-[25px] sm:text-[30px] md:text-[34px] lg:text-[40px] font-supera800 uppercase leading-[1]'> Who We Are </span>
                     </p>
                     <p className='block md:hidden mt-1 px-0.5 cxs:px-2 font-supera700 text-[10px] xs:text-[14px] text-[#5A5454] text-center'>Within the premises of the Sushma Township are reputed Schools.</p>
@@ -132,18 +132,18 @@ function About() {
                     WE PROVIDE YOU THE
                     BEST <span className='font-supera800'>EXPERIENCE</span>
                 </p>
-                <div className='rounded-t-[10px] bg-[#1E6DA4]  mx-3 md:mx-0 pb-[0.1px]'>
-                    <div ref={aboutRef} className=' grid grid-cols-2 grid-flow-row cmd:flex justify-center items-end p-3 lg:p-5 sm:gap-2'>
+                <div className='rounded-t-[10px] w-full lg:min-w-[560px] 2xl:w-[640px] bg-[#1E6DA4]  mx-3 md:mx-0 pb-[0.1px]'>
+                    <div ref={aboutRef} className=' grid grid-cols-2 grid-flow-row cmd:flex justify-center items-end p-3 lg:px-2 lg:py-5 sm:gap-2'>
                         {
                             tapData.map((item, index) => (
-                                <div key={index} style={{ borderColor: '#DCDCDC' }} className={`${index == 1 ? 'border-b-[0.85px] border-r-[0px]' : ''} ${index == 2 ? 'border-b-[0px]' : ''}   flex flex-col justify-center items-center text-center text-white leading-none sm:px-3 ${index < 3 ? "border-b-[0.85px]  border-r-[0.85px] sm:border-r-[0px] sm:border-b-[0.85px] pb-4 cmd:pb-0 cmd:border-b-[0px] cmd:border-r-[0.85px] border-dashed" : " sm:border-b-[0.85px] cmd:border-b-[0px] pb-4  cmd:pb-0 border-dashed border-r-0"}`}>
+                                <div key={index} style={{ borderColor: '#DCDCDC' }} className={` ${index == 1 ? 'border-b-[0.85px] border-r-[0px]' : ''} ${index == 2 ? 'border-b-[0px]' : ''} font-supera800 flex flex-col justify-between items-center text-center text-white leading-none sm:px-3 ${index < 3 ? "border-b-[0.85px]  border-r-[0.85px] sm:border-r-[0px] sm:border-b-[0.85px] pb-4 cmd:pb-0 cmd:border-b-[0px] cmd:border-r-[0.85px] border-dashed" : " sm:border-b-[0.85px] cmd:border-b-[0px] pb-4  cmd:pb-0 border-dashed border-r-0"}`}>
                                     <p className={`${index > 1 ? 'relative top-3 sm:top-0' : ''} text-[25px] lg:text-[30px] xl:text-[38.43px]  pb-1  font-[700]`}>
                                         {isVisible && hasAnimated ? (index == 1 ? 'zero' : formatCount(item.count)) : '00'}
-                                        <span className='text-2xl'>
-                                            {index == 0 ? '%' : index == 1 ? '%' : index == 2 ? 'Yrs' : '+'}
+                                        <span className='text-2xl xl:text-4xl ml-0.5'>
+                                            {index == 0 ? '%' : index == 1 ? '%' : index == 2 ? 'Yrs+' : '+'}
                                         </span>
                                     </p>
-                                    <p className={`${index > 1 ? ' relative top-3 sm:top-0' : ''}  text-[11px] cxs:text-[12px] md:text-[11px] cmd:text-[10px] lg:text-[11px] 3xl:text-[12px]  mt-0.5 tracking-[0.7px]`}>
+                                    <p className={`${index > 1 ? ' relative top-3 sm:top-0' : ''} sm:whitespace-nowrap capitalize font-supera500 text-[11px] cxs:text-[12px] md:text-[11px] cmd:text-[10px] lg:text-[11px] 3xl:text-[12px]  mt-0.5 tracking-[1px]`}>
                                         {item.text}
                                     </p>
                                 </div>

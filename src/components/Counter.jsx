@@ -73,7 +73,7 @@ function Counter() {
 
     return (
         <div className='sectionsGap' >
-            <div ref={counterRef} style={{ backgroundImage: `url('/images/089035460b1685390c840f400f092d06.png')` }} className='  w-full h-[288px] bg-cover bg-no-repeat'>
+            <div ref={counterRef} style={{ backgroundImage: `url('/images/089035460b1685390c840f400f092d06.png')` }} className='mx-auto w-[99%] h-[288px] bg-cover bg-no-repeat'>
                 <div className=' w-full h-full mx-auto grid grid-cols-2 grid-flow-row'>
                     <div className='flex lg:ps-28 items-center py-2 md:ps-10 border-r-[1px] border-[#ffffff46]'>
                         <div className=' text-white flex flex-col gap-3 justify-center cxs:justify-normal cxs:gap-0 cxs:flex-row w-full md:w-[550px] px-2 items-center lg:ml-8 xl:ml-12'>

@@ -87,7 +87,7 @@ html {
 }
 
 .sectionsGap {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -368,6 +368,7 @@ body {
 .testimonal-slider .swiper .swiper-slide-active .card-container {
   background-color: #515151;
   transition: 700ms;
+  cursor: grab;
   color: #fff;
   padding-bottom: 45px;
   position: relative;
