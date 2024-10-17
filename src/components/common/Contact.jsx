@@ -169,8 +169,8 @@ const GetInTouch = () => {
                                         </div>
                                         <div className='col-span-2 my-4'>
                                             <div className='w-[172px] h-[41px] rounded-sm overflow-hidden mx-auto'>
-                                                <button disabled={loaderShow} className='w-full h-full bg-[white] text-[#37493C] font-supera600 text-[19px] text-center flex justify-center items-center'>
-                                                    <div className='flex justify-center items-center gap-x-4'> {loaderShow ? 'Submiting...' : 'Submit'} {loaderShow && (<span className="form-loader after:bg-[#37493c] group-hover:after:bg-[#fff]"></span>)}</div>
+                                                <button disabled={loaderShow} className='w-full h-full bg-[#FD6502] text-[#fff] font-supera600 text-[19px] text-center flex justify-center items-center'>
+                                                    <div className='flex justify-center items-center gap-x-4'> {loaderShow ? 'Submiting...' : 'Submit'} {loaderShow && (<span className="form-loader after:bg-[#fff] group-hover:after:bg-[#fff]"></span>)}</div>
                                                 </button>
                                             </div>
                                         </div>

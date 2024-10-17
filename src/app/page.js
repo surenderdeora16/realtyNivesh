@@ -3,7 +3,7 @@ import AllProjects from '@/components/AllProjects';
 import About from '@/components/About';
 import Art_Construction from '@/components/Art_Construction.';
 import BoardMember from '@/components/BoardMember';
-import Brands from '@/components/Brands';
+import Brands from '@/components/Brands.jsx';
 import Connect_Banner from '@/components/Connect_Banner';
 import Counter from '@/components/Counter';
 import Faq from '@/components/Faq';
@@ -16,6 +16,7 @@ import Footer from '@/components/common/Footer'
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import OurserviceIcn from '../assets/images/ourservice locationicn.svg'
+import WhyRealtyNivesh from '@/components/WhyRealtyNivesh';
 
 export default function Home() {
   return (
@@ -85,6 +86,7 @@ export default function Home() {
         </div>
       </div>
       <Art_Construction />
+      <WhyRealtyNivesh />
       <BoardMember />
       <div className="sectionsGap">
         <div style={{ position: 'relative' }} className="w-full lg:h-[466px] h-[180px] sm:h-[230px] md:h-[300px] relative">

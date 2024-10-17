@@ -164,12 +164,12 @@ const Navbar = () => {
               submenu: []
             },
             {
-              href: '#why-choose-us',
+              href: '#why-realtynivesh',
               label: 'Why Choose Us',
               submenu: []
             },
             {
-              href: '#featured-projects',
+              href: '#rcih',
               label: 'Featured Projects',
               submenu: []
             },
