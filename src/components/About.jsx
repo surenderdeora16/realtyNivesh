@@ -93,7 +93,7 @@ function About() {
                         <span className='text-[#11508F] font-supera700 text-[30px]'>About us</span> <br className='hidden md:inline' />
                         <span className='text-[#474747] text-[22px] cxs:text-[25px] sm:text-[30px] md:text-[34px] lg:text-[40px] font-supera800 uppercase leading-[1]'> Who We Are </span>
                     </p>
-                    <p className='block md:hidden mt-1 px-0.5 cxs:px-2 font-supera700 text-[10px] xs:text-[14px] text-[#5A5454] text-center'>Within the premises of the Sushma Township are reputed Schools.</p>
+                    <p className='block md:hidden mt-1 px-0.5 cxs:px-2 font-supera700 text-[10px] xs:text-[14px] text-[#5A5454] text-center'>Expertly guiding your real estate investments with trust, innovation, and growth opportunities.</p>
                 </div>
                 <div className='flex md:hidden justify-center'>
                     <div className='flex md:hidden mx-auto w-[50%] relative justify-center lg:justify-end lg:-ml-16 my-0 cxs:my-5 md:my-0'>
@@ -138,7 +138,7 @@ function About() {
                             tapData.map((item, index) => (
                                 <div key={index} style={{ borderColor: '#DCDCDC' }} className={` ${index == 1 ? 'border-b-[0.85px] border-r-[0px]' : ''} ${index == 2 ? 'border-b-[0px]' : ''} font-supera800 flex flex-col justify-between items-center text-center text-white leading-none sm:px-3 ${index < 3 ? "border-b-[0.85px]  border-r-[0.85px] sm:border-r-[0px] sm:border-b-[0.85px] pb-4 cmd:pb-0 cmd:border-b-[0px] cmd:border-r-[0.85px] border-dashed" : " sm:border-b-[0.85px] cmd:border-b-[0px] pb-4  cmd:pb-0 border-dashed border-r-0"}`}>
                                     <p className={`${index > 1 ? 'relative top-3 sm:top-0' : ''} text-[25px] lg:text-[30px] xl:text-[38.43px]  pb-1  font-[700]`}>
-                                        {isVisible && hasAnimated ? (index == 1 ? 'zero' : formatCount(item.count)) : '00'}
+                                        {isVisible && hasAnimated ? (index == 1 ? 'Zero' : formatCount(item.count)) : '00'}
                                         <span className='text-2xl xl:text-4xl ml-0.5'>
                                             {index == 0 ? '%' : index == 1 ? '%' : index == 2 ? 'Yrs+' : '+'}
                                         </span>

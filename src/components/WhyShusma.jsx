@@ -39,7 +39,7 @@ function WhyShusma() {
                                 <div className='max-w-[30px] cxs:max-auto cxs:w-[28px] h-[25px] cxs:h-[18px] lg:w-[36px] lg:h-[26px] xl:max-w-[60px] xl:h-[35px]   z-[1]'>
                                     <Image className='object-contain' src={Icon1} alt="" />
                                 </div>
-                                <p className='  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  xl:font-supera700 lg:leading-[9.24px] text-[#FFFFFF] '>
+                                <p className='  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  font-supera700 lg:leading-[9.24px] text-[#FFFFFF] '>
                                     Real Estate Consultation
                                 </p>
                             </div>
@@ -49,7 +49,7 @@ function WhyShusma() {
                                 <div className='max-w-[34px] cxs:max-auto cxs:w-[28px] h-[25px] cxs:h-[18px] lg:w-[36px] lg:h-[26px] xl:w-[46px] xl:h-[37px]   z-[1]'>
                                     <Image className='object-contain' src={Icon2} alt="" />
                                 </div>
-                                <p className='  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  xl:font-supera700 lg:leading-[9.24px] text-[#FFFFFF] '>
+                                <p className='  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  font-supera700 lg:leading-[9.24px] text-[#FFFFFF] '>
                                     Property Investments
                                 </p>
                             </div>
@@ -59,7 +59,7 @@ function WhyShusma() {
                                 <div className='max-w-[34px] cxs:max-auto cxs:w-[28px] h-[25px] cxs:h-[18px] lg:w-[36px] lg:h-[26px] xl:w-[46px] xl:h-[37px]   z-[1]'>
                                     <Image className='object-contain' src={Icon3} alt="" />
                                 </div>
-                                <p className='  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  xl:font-supera700 lg:leading-[9.24px] text-[#FFFFFF] '>
+                                <p className='  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  font-supera700 lg:leading-[9.24px] text-[#FFFFFF] '>
                                     Plot & Apartment Sales
                                 </p>
                             </div>
@@ -69,7 +69,7 @@ function WhyShusma() {
                                 <div className='max-w-[34px] cxs:max-auto cxs:w-[28px] h-[25px] cxs:h-[18px] lg:w-[36px] lg:h-[26px] xl:w-[46px] xl:h-[37px]   z-[1]'>
                                     <Image className='object-contain' src={Icon4} alt="" />
                                 </div>
-                                <p className='  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  xl:font-supera700 lg:leading-[9.24px] text-[#FFFFFF] '>
+                                <p className='  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  font-supera700 lg:leading-[9.24px] text-[#FFFFFF] '>
                                     Leasing & Renting Assistance
                                 </p>
                             </div>
@@ -79,7 +79,7 @@ function WhyShusma() {
                                 <div className='max-w-[34px] cxs:max-auto cxs:w-[28px] lg:w-[36px] xl:w-[46px]  z-[1]'>
                                     <Image className='object-contain' src={Icon5} alt="" />
                                 </div>
-                                <p className='whitespace-normal  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  xl:font-supera700  text-[#FFFFFF] '>
+                                <p className='whitespace-normal  lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  font-supera700  text-[#FFFFFF] '>
                                     Real estate specialized digital marketing services
                                 </p>
                             </div>
@@ -89,7 +89,7 @@ function WhyShusma() {
                                 <div className='max-w-[34px] cxs:max-auto cxs:w-[28px] h-[25px] cxs:h-[18px] lg:w-[36px] lg:h-[26px] xl:w-[46px] xl:h-[37px]   z-[1]'>
                                     <Image className='object-contain h-8 -mt-1 lg:mt-0' src={Icon6} alt="" />
                                 </div>
-                                <p className='w-full whitespace-normal lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  xl:font-supera700 text-[#FFFFFF] '>
+                                <p className='w-full whitespace-normal lg:text-[14px] 2xl:text-[17px] text-[11px] bxxs:text-[14px] xs:text-[15px]  font-supera700 text-[#FFFFFF] '>
                                     Strategic Advisory Commercial & Residential Sales
                                 </p>
                             </div>

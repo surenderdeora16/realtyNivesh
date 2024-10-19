@@ -39,7 +39,7 @@ function BoardMember() {
                     <div className='xl:w-[314px] w-full'>
                         <p className='uppercase lg:text-[40px] text-[25px] text-center xl:text-start text-[#4B4B4B] font-supera800 lg:leading-[55px]'>
                             MEET OUR
-                            board MEMBER
+                            board MEMBERS
                         </p>
 
                     </div>
@@ -68,7 +68,7 @@ function BoardMember() {
                                 <p className='duration-500 text-[20px] text-[#4D4D4E] font-supera800 uppercase'>
                                     {memberData[viewMember]?.name}
                                 </p>
-                                <p className='duration-500 text-[14px] cxs:text-[15.66px] text-[#686868] font-supera700 uppercase tracking-wide'>{memberData[viewMember]?.post}</p>
+                                <p className='duration-500 text-[14px] cxs:text-[15.66px] text-[#686868] font-supera700 capitalize tracking-wide'>{memberData[viewMember]?.post}</p>
                             </div>
                         </div>
                         <div className=' bg-[#1E6DA4] w-[300px] xs:w-[100%] mx-auto  rounded-[9px] lg:px-12 px-5 lg:py-9 py-4 sm:py-5 sm:px-8 font-supera400 tracking-[1.2px] md:tracking-wide text-[12px] sm:text-[13px] md:text-[15px] lg:text-[17px] text-white mt-5 lg:mt-0'>

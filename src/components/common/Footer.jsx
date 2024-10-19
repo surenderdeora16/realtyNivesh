@@ -105,7 +105,7 @@ function Footer() {
                     <hr className=' max-w-[1257px] mx-5 lg:mx-auto border-[#787777] mt-[50px] mb-[15px]' />
                     <div className='flex flex-col cmd:flex-row justify-center items-center gap-2 cmd:gap-0 px-3'>
                         <div className='flex items-center justify-center'>
-                            <span className='font-supera700 text-[15px] cxs:text-[19px] lg:text-[23px] text-white uppercase tracking-wide'>Corporate Office</span>
+                            <span className='font-supera700 text-[15px] cxs:text-[19px] lg:text-[20px] text-white uppercase tracking-wide'>Corporate Office</span>
                             &nbsp;
                             &nbsp;
                             <span>
@@ -115,10 +115,10 @@ function Footer() {
                             </span>
                             &nbsp;
                             &nbsp;
-                            <b className='inline cmd:hidden font-supera700 text-[14px] text-[#FC6602] uppercase'> Reality </b>&nbsp;<b className='inline cmd:hidden text-[#1EC8EC] uppercase'> Nivesh </b>
+                            <b className='inline cmd:hidden font-supera700 text-[14px] text-[#FC6602] uppercase'> Realty </b>&nbsp;<b className='inline cmd:hidden text-[#1EC8EC] uppercase'> Nivesh </b>
                         </div>
                         <h6 className='font-supera700 text-[12px] cxs:text-[14px] lg:text-[16px] xl:text-[18px] flex'>
-                            <b className='hidden cmd:inline text-[#FC6602] uppercase'> Reality </b>&nbsp;<b className='hidden cmd:inline text-[#1EC8EC] uppercase'> Nivesh :&nbsp;</b>
+                            <b className='hidden cmd:inline text-[#FC6602] uppercase'> Realty </b>&nbsp;<b className='hidden cmd:inline text-[#1EC8EC] uppercase'> Nivesh :&nbsp;</b>
                             <p className='font-supera500 text-white text-center cmd:text-left'>Showroom No. 12 level 2, UPTOWN INSIGNIA PR-7 Airport Road, Zirakpur, Punjab</p>
                         </h6>
                     </div>

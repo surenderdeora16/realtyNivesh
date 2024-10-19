@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import logo from '../../assets/images/logo/sushmaenq.png'
-import realtyNiveshlogo from '../../assets/images/logo/realtynivesh-logo.png'
+import realtyNiveshlogo from '../../assets/images/logo/footerlogo.png'
 import propertyData from '@/app/PropertyData';
 import Image from 'next/image';
 import axios from 'axios';
