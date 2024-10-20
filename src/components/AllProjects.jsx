@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-fade'; // Import the effect
@@ -10,24 +10,55 @@ import BannerImg3 from '../assets/images/topbannerimg3.png';
 import { Autoplay, EffectFade } from 'swiper/modules'; // Import EffectFade
 
 const MainBanner = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const swiperRef = useRef(null);
+
     const banners = [
-        { id: 1, img: BannerImg1, heading: 'Your Trusted Real Estate Investment Partner.', subheading: 'Expert Guidance for Smart Property Investments in North India.' },
-        { id: 2, img: BannerImg2, heading: 'Invest in Your Future Invest in Real Estate', subheading: 'Secure your tomorrow by making smart real estate investments today. Explore premium properties in Mohali, Zirakpur, and beyond.' },
-        { id: 3, img: BannerImg3, heading: 'Real Estate Excellence – Where Trust Meets Opportunity!', subheading: 'With 15 years of experience, Realty Nivesh ensures transparency, trust, and unmatched deals in real estate.' },
+        { id: 1, type: 'video', videoUrl: '/videos/realtyniveshbgimg.mov', heading: 'Invest in Your Future Invest in Real Estate', subheading: 'Secure your tomorrow by making smart real estate investments today. Explore premium properties in Mohali, Zirakpur, and beyond.' },
+        { id: 2, type: 'image', img: BannerImg1, heading: 'Your Trusted Real Estate Investment Partner.', subheading: 'Expert Guidance for Smart Property Investments in North India.' },
+        { id: 3, type: 'image', img: BannerImg2, heading: 'Real Estate Excellence – Where Trust Meets Opportunity!', subheading: 'With 15 years of experience, Realty Nivesh ensures transparency, trust, and unmatched deals in real estate.' },
     ];
 
-    const [activeIndex, setActiveIndex] = useState(0);
+    const handlePaginationClick = (index) => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.slideToLoop(index); // Move to the clicked slide
+        }
+    };
+
+    const handleSlideChange = () => {
+        console.log("Ok")
+        const swiper = swiperRef.current.swiper;
+        const currentSlide = swiper.slides[swiper.activeIndex];
+        const video = currentSlide.querySelector('video');
+        console.log('video', video)
+
+        if (video) {
+            console.log('donr')
+            swiper.autoplay.stop();
+            video.play();
+
+            video.onended = () => {
+                swiper.slideNext();
+            };
+
+        } else {
+            console.log("emd")
+            swiper.params.autoplay.delay = 2000;
+            swiper.autoplay.start();
+        }
+    };
 
     return (
         <section className="w-full h-screen relative">
             <Swiper
+                ref={swiperRef}
                 spaceBetween={0}
                 slidesPerView={1}
                 loop={true}
                 effect="fade" // Add fade effect
                 fadeEffect={{ crossFade: true }} // Optional: smooth fade transition
                 speed={2000}
-                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                onSlideChange={(swiper) => { handleSlideChange(); setActiveIndex(swiper.realIndex) }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 modules={[EffectFade, Autoplay]} // Add EffectFade here
                 className="w-full h-full relative"
@@ -35,7 +66,15 @@ const MainBanner = () => {
                 {banners.map((banner) => (
                     <SwiperSlide key={banner.id}>
                         <div className="relative w-full h-full">
-                            <Image src={banner.img} fill className="w-full h-full object-cover" alt={`Banner ${banner.id}`} />
+                            {banner.type === 'image' ? (
+                                <Image src={banner.img} fill className="w-full h-full object-cover" alt={`Banner ${banner.id}`} />
+                            ) : (
+                                <video
+                                    src={banner.videoUrl}
+                                    className="w-full h-full object-cover"
+                                    muted
+                                />
+                            )}
                             <div className="w-full h-full absolute top-0 left-0 bg-[linear-gradient(360deg,_rgba(14,_13,_13,_0)_0%,_#0A0A0A_98.61%)]">
                                 <div className="px-5 xs:px-10 cmd:px-14 lg:px-6 xl:px-16 3xl:px-4 w-full h-full flex flex-col justify-center items-start">
                                     <div className="2xl:container mx-auto">
@@ -55,7 +94,8 @@ const MainBanner = () => {
                                                 {banners.map((_, idx) => (
                                                     <li
                                                         key={idx}
-                                                        className={`w-[40px] h-[6px] rounded-md ${activeIndex === idx ? 'bg-[#FD6502]' : 'bg-white'}`}
+                                                        onClick={() => handlePaginationClick(idx)}
+                                                        className={`cursor-pointer w-[40px] h-[6px] rounded-md ${activeIndex === idx ? 'bg-[#FD6502]' : 'bg-white'}`}
                                                     ></li>
                                                 ))}
                                             </ul>
