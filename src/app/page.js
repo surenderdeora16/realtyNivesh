@@ -17,6 +17,7 @@ import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import OurserviceIcn from '../assets/images/ourservice locationicn.svg'
 import WhyRealtyNivesh from '@/components/WhyRealtyNivesh';
+import AvatarModel from '@/components/common/AvatarModel';
 
 export default function Home() {
   return (
@@ -81,7 +82,7 @@ export default function Home() {
                 </div>
                 Panchkula
               </div>
-              
+
             </div>
           </Marquee>
         </div>
@@ -114,6 +115,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <AvatarModel />
       <AppBar />
       <Footer />
     </div>

@@ -77,7 +77,7 @@ const MainBanner = () => {
                             )}
                             <div className="w-full h-full absolute top-0 left-0 bg-[linear-gradient(360deg,_rgba(14,_13,_13,_0)_0%,_#0A0A0A_98.61%)]">
                                 <div className="px-5 xs:px-10 cmd:px-14 lg:px-6 xl:px-16 3xl:px-4 w-full h-full flex flex-col justify-center items-start">
-                                    <div className="2xl:container mx-auto">
+                                    <div className="2xl:container mx-auto mt-5">
                                         <h1 className="text-center sm:text-left mx-auto sm:mx-0 w-full bxxs:w-[300px] xs:w-full cxs:w-[400px] sm:w-[580px] md:w-[700px] cmd:w-full xl:w-[1100px] 3xl:w-[1250px] font-supera600 text-white text-[30px] xs:text-[35px] cxs:text-[40px] sm:text-[45px] md:text-[40px] lg:text-[65px] 3xl:text-[77px] uppercase leading-tight">
                                             {banner.heading}
                                         </h1>

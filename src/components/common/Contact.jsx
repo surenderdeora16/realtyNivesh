@@ -8,6 +8,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-phone-number-input/style.css'
 import PhoneInput, { getCountryCallingCode } from 'react-phone-number-input'
+import AxiosHelper from '@/app/AxiosHelper';
 
 const validationSchema = Yup.object({
     name: Yup.string().required('Name is required').min(3).max(50),
@@ -38,6 +39,7 @@ const GetInTouch = () => {
                 </div>
                 <Formik
                     initialValues={{
+                        type: 1,
                         name: '',
                         lastName: '',
                         email: '',
@@ -53,10 +55,14 @@ const GetInTouch = () => {
                     onSubmit={async (values, { setErrors, resetForm }) => {
                         setLoaderShow(true);
                         try {
-                            const data = await axios.post(`${process.env.basePath}/api/enquiry/`, {
-                                data: { ...values, name: `${values.name} ${values.lastName}`, mobile: `${countryCode} ${values.mobile}` },
-                                action: 'getintouch'
-                            });
+                            const payload = {
+                                ...values,
+                                name: `${values.name} ${values.lastName}`,
+                                mobile: `${values.mobile}`,
+                                action: "getintouch",
+                            };
+                            const data = await AxiosHelper.postData(`/realtynivesh-enquiry/`, payload);
+
                             setLoaderShow(false);
                             if (data && data.status) {
                                 resetForm();

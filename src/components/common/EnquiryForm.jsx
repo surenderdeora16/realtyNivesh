@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import logo from '../../assets/images/logo/sushmaenq.png'
-import realtyNiveshlogo from '../../assets/images/logo/footerlogo.png'
+import realtyNiveshlogo from '../../assets/images/logo/realtynivesh-logo.png'
 import propertyData from '@/app/PropertyData';
 import Image from 'next/image';
 import axios from 'axios';
@@ -12,6 +12,7 @@ import { toast } from 'react-toastify';
 import 'react-phone-number-input/style.css'
 import PhoneInput, { getCountryCallingCode } from 'react-phone-number-input'
 import Link from 'next/link';
+import AxiosHelper from '@/app/AxiosHelper';
 
 
 const getPropertyHeadings = (data) => {
@@ -99,18 +100,19 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                             </svg>
                         </div>
                         <div className={`w-full h-full flex flex-col cmd:flex-row ${showOtpInput ? '' : 'justify-between'} px-3.5 xxs:px-5 cxs:px-10 xl:px-28`}>
-                            <div className='w-full cmd:w-1/2 flex flex-col  justify-around lg:justify-between'>
+                            <div className='w-full cmd:w-1/2 flex flex-col  justify-around lg:justify-between '>
                                 {/* <h4 className='mb-5 cmd:mb-0 font-supera500 text-[25px] cmd:text-[35px] xl:text-[43px] text-[#555555] max-w-[280px] cmd:max-w-[380px] leading-[1.3]'>We Are Excited To <span className='font-supera700 text-[#2C3D31]'>Meet You</span></h4> */}
-                                <h4 className='mb-5 cmd:mb-0 pr-5 xs:pr-10 sm:pr-7 lg:pr-5 font-supera700 text-[25px] cmd:text-[30px] xl:text-[35px] text-[#555555] w-full  leading-[1.3]'>{thankYou ? 'Thank You' : heading}</h4>
+                                <h4 className='text-center cmd:text-left mb-5 cmd:mb-0 pr-5 xs:pr-10 sm:pr-7 lg:pr-5 font-supera700 text-[25px] cmd:text-[30px] xl:text-[35px] text-[#555555] w-full  leading-[1.3]'>{thankYou ? 'Thank You' : heading}</h4>
                                 {/* <Link href={'#'} className='hidden cmd:block w-[200px] h-[50px] lg:w-[290px] lg:h-[72px] xl:w-[379px] xl:h-[105px] relative'>
                                     <Image src={propertyLogo || logo} fill alt="sushma elementa logo" className='object-contain object-left' />
                                 </Link> */}
-                                <div className='hidden cmd:block w-[200px] h-[75px] xl:w-[244px] xl:h-[86px] relative'>
+                                <div className='hidden cmd:block w-[280px] h-[85px] xl:w-[300px] xl:h-[110px] relative'>
                                     <Image src={realtyNiveshlogo} fill alt="realty nivesh logo" className="object-contain" />
                                 </div>
                             </div>
                             <Formik
                                 initialValues={{
+                                    type: `${formType === 'bookSiteVisit' ? 3 : 2}`,
                                     name: '',
                                     mobile: '',
                                     projectName: '',
@@ -140,16 +142,16 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                     mobile: `${values?.mobile}`, otp: `${values?.otp}`
                                                 },
                                         };
-                                        const data = await axios.post(`/api/enquiry`, payload);
+                                        const data = await AxiosHelper.postData(`/realtynivesh-enquiry/`, payload);
 
                                         console.log('data', data)
-                                        if (data && data.status) {
+                                        if (data && data?.data?.status) {
                                             if (actionToSend == 'submitForm') {
                                                 setShowOtpInput(true)
                                                 setAction('verifyOTP')
                                                 setEditingNumber(`${values?.mobile}`)
                                                 setLoaderShow(false);
-                                            } else if (actionToSend == 'verifyOTP' && data?.data?.message == 'OTP verified and email sent!') {
+                                            } else if (actionToSend == 'verifyOTP' && data?.data?.status) {
                                                 resetForm();
                                                 setValue('');
                                                 setIsChecked(false);
@@ -166,7 +168,6 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                             }
                                         } else {
                                             toast.error(data?.data?.message || 'Error occurred');
-                                            setErrors(data?.data?.errors || {});
                                             setLoaderShow(false)
                                         }
                                     } catch (error) {
@@ -203,7 +204,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                         </div>
 
                                                     </div>
-                                                    <p className='pt-1.5 font-supera400 text-[12px] text-[#7D7D7D]'>You’ll receive OTP SMS </p>
+                                                    <p className='pt-1.5 font-supera400 text-[12px] text-[#7D7D7D] text-left'>You’ll receive OTP SMS </p>
                                                     <ErrorMessage component="div" className=" text-left text-[12px] font-supera500 pl-1 mt-1  text-red-500" name="mobile" />
 
                                                 </div>
@@ -249,7 +250,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                     )}
                                                     <div className='mt-3 cmd:mt-5 pl-2 flex'>
                                                         <Field type="checkbox" id="terms" checked={isChecked} onChange={() => setIsChecked(!isChecked)} className='w-[17px] h-[17px] relative top-0.5 border-[#E98F0A] outline-[#E98F0A]' />
-                                                        <p className='ml-2.5 max-w-[350px] tracking-wide font-supera500 text-[11px] text-[#737474]'>I agree to receive newsletters, or relevant marketing content and
+                                                        <p className='ml-2.5 max-w-[350px] tracking-wide font-supera500 text-[11px] text-[#737474] text-left'>I agree to receive newsletters, or relevant marketing content and
                                                             Sushma Group Terms and Conditions</p>
                                                     </div>
                                                     <button type='submit' onClick={() => { setAction('submitForm') }} disabled={loaderShow} className='mt-5 cmd:mt-10 w-full h-[40px] bg-[#2E72A9] rounded-[20px] text-[#fff] font-supera500 tracking-wide text-[16px]'>
@@ -323,8 +324,8 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                                             action: 'resendOTP',
                                                                             data: { mobile: `${values?.mobile}` },
                                                                         };
-                                                                        const response = await axios.post(`/api/enquiry`, payload);
-                                                                        if (response.data?.message == 'New OTP sent successfully!') {
+                                                                        const response = AxiosHelper.postData(`/realtynivesh-enquiry/`, payload)
+                                                                        if (response?.data?.message == 'New OTP sent successfully!') {
                                                                             toast.success('New OTP sent to your mobile no.');
                                                                             setOtpResendLoading(false);
                                                                             setLoaderShow(false)
@@ -364,7 +365,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                     <div>
                                                         <ul className='flex flex-wrap gap-x-8 xs:gap-x-16 gap-y-3'>
                                                             <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#products" onClick={() => handleClose()} className="w-full h-full">Offers</Link></li>
-                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="/" className="w-full h-full">Our projects</Link></li>
+                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="/projects" className="w-full h-full">Our projects</Link></li>
                                                             <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#service-part" onClick={() => handleClose()} className="w-full h-full">Sushma Service Partner</Link></li>
                                                             <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#About-Us" onClick={() => handleClose()} className="w-full h-full">About Us</Link></li>
                                                             <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#FAQ" onClick={() => handleClose()} className="w-full h-full">FAQ</Link></li>

@@ -8,6 +8,7 @@ import HambarIcon from '../../assets/images/hambar.svg';
 import { useFixedSection } from '@/app/context/FixedSectionContext';
 import { FiPhoneCall } from "react-icons/fi";
 import Sidebar from './MegaMenuSidebar';
+import EnquiryForm from './EnquiryForm';
 
 const Navbar = () => {
   const params = useParams();
@@ -17,12 +18,17 @@ const Navbar = () => {
   const [isScroll, setIsScroll] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [megaMenu, setMegaMenu] = useState(false);
-  const [mobileMenu, setMobileMenu] = useState(false)
   const [isScrollInFloorPlans, setIsScrollInFloorPlans] = useState(false);
-  const [openIndex, setOpenIndex] = useState(null); // Track the open submenu index
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleSubmenuToggle = (index) => {
-    setOpenIndex(index === openIndex ? null : index); // Toggle submenu open/close
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Disable scrolling
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = 'unset'; // Enable scrolling
   };
 
   const handleUserInteraction = () => {
@@ -143,6 +149,9 @@ const Navbar = () => {
 
   return (
     <nav style={{ transform: isScrollInFloorPlans ? 'translateY(-100%)' : '' }} className={`${megaMenu ? 'bg-[#000000b1] backdrop-blur px-5 sm:px-10 cmd:px-14 lg:px-6 xl:px-16 3xl:px-4 pt-2 sm:pt-6 sm:pb-10' : ''}  w-full z-10 transition-all duration-500 ${isSticky ? `fixed top-0 bg-[#11508f] sm:bg-[#000000ef] shadow-lg py-1 z-50 ${isVisible ? 'translate-y-0' : `${megaMenu ? '' : '-translate-y-full'}`} duration-500` : ` absolute top-0 left-0  duration-500 py-2 lg:py-1 xl:py-4`} flex justify-center items-center duration-500`}>
+
+      {isModalOpen && <EnquiryForm heading={'We Are Excited To Meet You'} formType={'bookSiteVisit'} isOpen={isModalOpen} onClose={handleCloseModal} eventSource="Book A Site Form" />}
+
       <div className={` duration-500  xl:py-1 lg:py-2.5 w-full 2xl:container flex justify-between lg:justify-around 3xl:justify-between ${megaMenu ? 'items-end xl:items-center duration-1000 px-0' : 'items-center duration-1000 px-1.5 cxs:px-5 xl:px-0'} duration-1000 mx-2`}>
         <Link href="#" aria-label="Back to homepage" className={`${isSticky ? 'w-[170px] h-[60px] xl:w-[180px] duration-1000' : 'w-[150px] bxxs:w-[160px] xs:w-[170px] cxs:w-[180px] h-[50px] sm:w-[200px] sm:h-[60px] xl:w-[206px] xl:h-[50px] duration-1000'} flex relative`}>
           <Image
@@ -247,6 +256,11 @@ const Navbar = () => {
               </div>
             </li>
           ))}
+          <li>
+            <div onClick={() => { handleOpenModal() }} className="uppercase cursor-pointer tracking-wide py-1 px-4 hidden lg:block bg-white rounded-full text-[12px] text-[#1E6DA4] font-supera700">
+              Book a Site visit
+            </div>
+          </li>
           <li className={`${megaMenu ? 'self-start' : 'self-center'} flex lg:hidden`}>
             {!megaMenu && (
               <button className="flex justify-end  pl-[20px] xl:pl-[40px] relative top-1">

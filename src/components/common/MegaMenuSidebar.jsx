@@ -11,9 +11,10 @@ import logo from '../../assets/images/logo/footerlogo.png';
 
 const menuData = [
     { href: '#About-Us', label: 'About Us', submenu: [] },
-    { href: '#what-we-do', label: 'what we do', submenu: [] },
+    { href: '#what-we-do', label: 'What we do', submenu: [] },
     { href: '#why-realtynivesh', label: 'Why Choose Us', submenu: [] },
     { href: '#rcih', label: 'Featured Projects', submenu: [] },
+    { href: '#our-association', label: 'Associated Builders', submenu: [] },
     { href: '#contact-us', label: 'Contact Us', submenu: [] },
    
 ];

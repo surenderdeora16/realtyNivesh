@@ -9,14 +9,20 @@ import img5 from "../assets/images/associateimg5.png"
 import img6 from "../assets/images/associateimg6.png"
 import img7 from "../assets/images/associateimg7.png"
 import img8 from "../assets/images/associateimg8.jpg"
+
+import img9 from "../assets/images/associateimg9.png"
+import img10 from "../assets/images/associateimg10.png"
+import img11 from "../assets/images/associateimg11.png"
+import img12 from "../assets/images/associateimg12.png"
+
 import Image from 'next/image';
 
 export default function Brands() {
 
-    let brand = [img7, img4, img6, img8, img5, img2, img3, img1, img7, img4, img6, img8, img5, img2, img3, img1]
+    let brand = [img7, img10, img9, img4, img6, img11, img8, img5, img2, img3, img1, img12, img7, img10, img9, img4, img6, img11, img8, img5, img2, img3, img1, img12]
 
     return (
-        <div className="sectionsGap  lg:max-w-[1250px] sm:mx-auto">
+        <div id="our-association" className="sectionsGap  lg:max-w-[1250px] sm:mx-auto">
             <Heading
                 heading="Our Association"
                 className="text-[#464646] pb-10"
@@ -32,7 +38,7 @@ export default function Brands() {
                                     fill
                                     objectFit="contain"
                                     className="object-contain px-2"
-                                    priority={false} loading="lazy" 
+                                    priority={false} loading="lazy"
                                 />
                             </div>
                         ))
