@@ -179,7 +179,7 @@ const Navbar = () => {
               submenu: []
             },
             {
-              href: '#rcih',
+              href: '#  ',
               label: 'Featured Projects',
               submenu: []
             },
@@ -257,7 +257,7 @@ const Navbar = () => {
             </li>
           ))}
           <li>
-            <div onClick={() => { handleOpenModal() }} className="uppercase cursor-pointer tracking-wide py-1 px-4 hidden lg:block bg-white rounded-full text-[12px] text-[#1E6DA4] font-supera700">
+            <div onClick={() => { handleOpenModal() }} className="uppercase cursor-pointer tracking-wide py-1 px-4 hidden lg:block bg-white rounded-full text-[13px] text-[#1E6DA4] font-supera700">
               Book a Site visit
             </div>
           </li>

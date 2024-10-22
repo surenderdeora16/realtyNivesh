@@ -14,9 +14,10 @@ const MainBanner = () => {
     const swiperRef = useRef(null);
 
     const banners = [
-        { id: 1, type: 'video', videoUrl: '/videos/realtyniveshbgimg.mov', heading: 'Invest in Your Future Invest in Real Estate', subheading: 'Secure your tomorrow by making smart real estate investments today. Explore premium properties in Mohali, Zirakpur, and beyond.' },
-        { id: 2, type: 'image', img: BannerImg1, heading: 'Your Trusted Real Estate Investment Partner.', subheading: 'Expert Guidance for Smart Property Investments in North India.' },
-        { id: 3, type: 'image', img: BannerImg2, heading: 'Real Estate Excellence – Where Trust Meets Opportunity!', subheading: 'With 15 years of experience, Realty Nivesh ensures transparency, trust, and unmatched deals in real estate.' },
+        { id: 1, type: 'video', videoUrl: '/videos/realtyniveshbgimg.mov', heading: "Your Property Journey Starts Here – Let's Build Your Future!", subheading: "From residential to commercial spaces, Realty Nivesh offers the expertise to help you invest wisely." },
+        { id: 2, type: 'image', img: BannerImg1, heading: 'Your Dream Property Awaits Make It Yours Today!', subheading: 'Begin your journey to owning the perfect home or investment with Realty Nivesh. Let us guide you to the best deals.' },
+        { id: 3, type: 'image', img: BannerImg3, heading: 'Real Estate Excellence – Where Trust Meets Opportunity!', subheading: 'With 15 years of experience, Realty Nivesh ensures transparency, trust, and unmatched deals in real estate.' },
+        { id: 4, type: 'image', img: BannerImg2, heading: 'Invest in Your Future, Invest in Real Estate', subheading: 'Secure your tomorrow by making smart real estate investments today. Explore premium properties in Mohali, Zirakpur, and beyond.' },
     ];
 
     const handlePaginationClick = (index) => {
@@ -43,7 +44,7 @@ const MainBanner = () => {
 
         } else {
             console.log("emd")
-            swiper.params.autoplay.delay = 2000;
+            swiper.params.autoplay.delay = 4000;
             swiper.autoplay.start();
         }
     };
@@ -59,7 +60,7 @@ const MainBanner = () => {
                 fadeEffect={{ crossFade: true }} // Optional: smooth fade transition
                 speed={2000}
                 onSlideChange={(swiper) => { handleSlideChange(); setActiveIndex(swiper.realIndex) }}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
                 modules={[EffectFade, Autoplay]} // Add EffectFade here
                 className="w-full h-full relative"
             >
@@ -78,10 +79,10 @@ const MainBanner = () => {
                             <div className="w-full h-full absolute top-0 left-0 bg-[linear-gradient(360deg,_rgba(14,_13,_13,_0)_0%,_#0A0A0A_98.61%)]">
                                 <div className="px-5 xs:px-10 cmd:px-14 lg:px-6 xl:px-16 3xl:px-4 w-full h-full flex flex-col justify-center items-start">
                                     <div className="2xl:container mx-auto mt-5">
-                                        <h1 className="text-center sm:text-left mx-auto sm:mx-0 w-full bxxs:w-[300px] xs:w-full cxs:w-[400px] sm:w-[580px] md:w-[700px] cmd:w-full xl:w-[1100px] 3xl:w-[1250px] font-supera600 text-white text-[30px] xs:text-[35px] cxs:text-[40px] sm:text-[45px] md:text-[40px] lg:text-[65px] 3xl:text-[77px] uppercase leading-tight">
+                                        <h1 className="text-center sm:text-left mx-auto sm:mx-0 w-full bxxs:w-[300px] xs:w-full cxs:w-[400px] sm:w-[580px] md:w-[700px] cmd:w-full xl:w-[1100px] 3xl:w-[1250px] font-supera600 text-white text-[30px] xs:text-[35px] cxs:text-[40px] sm:text-[45px] md:text-[40px] lg:text-[55px] 3xl:text-[77px] uppercase leading-tight">
                                             {banner.heading}
                                         </h1>
-                                        <h3 className="max-w-[900px] text-center sm:text-left font-supera500 text-[17px] xs:text-[19px] cxs:text-[22px] sm:text-[25px] text-white capitalize mt-[16px] xs:mt-[18px] md:mt-[22px]">
+                                        <h3 className="max-w-[900px] text-center sm:text-left font-supera500 text-[17px] xs:text-[19px] cxs:text-[22px] sm:text-[22px] text-white capitalize mt-[16px] xs:mt-[18px] md:mt-[22px]">
                                             {banner.subheading}
                                         </h3>
                                         <div className="mx-auto sm:mx-0 w-[150px] h-[34px] sm:w-[175px] sm:h-[44px] rounded-full bg-white mt-[25px] md:mt-[40px]">
@@ -95,7 +96,7 @@ const MainBanner = () => {
                                                     <li
                                                         key={idx}
                                                         onClick={() => handlePaginationClick(idx)}
-                                                        className={`cursor-pointer w-[40px] h-[6px] rounded-md ${activeIndex === idx ? 'bg-[#FD6502]' : 'bg-white'}`}
+                                                        className={`cursor-pointer w-[40px] h-[4px] rounded-md ${activeIndex === idx ? 'bg-[#FD6502]' : 'bg-white'}`}
                                                     ></li>
                                                 ))}
                                             </ul>

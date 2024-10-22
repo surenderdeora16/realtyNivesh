@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import logo from '../../assets/images/logo/sushmaenq.png'
-import realtyNiveshlogo from '../../assets/images/logo/realtynivesh-logo.png'
+import realtyNiveshlogo from '../../assets/images/logo/realtyniveshlogoenq.png'
 import propertyData from '@/app/PropertyData';
 import Image from 'next/image';
 import axios from 'axios';
@@ -50,7 +50,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
         mobile: Yup.string().min(10, 'Must be at least 10 digits').required('Mobile number is required'),
         email: Yup.string().email('Invalid email address').required('Email is required'),
         siteVisitDate: formType === 'bookSiteVisit' ? Yup.string().required('Site visit date is required') : null,
-        projectName: formType === 'bookSiteVisit' ? Yup.string().required('Project Name is required') : null,
+        // projectName: formType === 'bookSiteVisit' ? Yup.string().required('Project Name is required') : null,
 
     });
 
@@ -115,7 +115,8 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                     type: `${formType === 'bookSiteVisit' ? 3 : 2}`,
                                     name: '',
                                     mobile: '',
-                                    projectName: '',
+                                    // projectName: '',
+                                    message:'',
                                     siteVisitDate: '',
                                     email: '',
                                     otp: '',
@@ -216,7 +217,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                     <ErrorMessage component="div" className=" text-left text-[12px] font-supera500 pl-1 mt-1  text-red-500" name="email" />
                                                 </div>
                                                 {/* )} */}
-                                                {formType === 'bookSiteVisit' && (
+                                                {/* {formType === 'bookSiteVisit' && (
                                                     <div className='flex flex-col max-w-full cmd:max-w-[405px] '>
                                                         <div className='w-full flex justify-between items-center mt-1 2xl:mt-2 pr-4 py-2.5 text-[#514E4E] bg-transparent border-b-[0.5px] border-[#AFAFAF] font-supera500 text-[15px] 3xl:text-[16px] overflow-hidden '>
                                                             <Field as="select" name="projectName" id="" className='cursor-pointer w-full h-full placeholder:text-[#514E4E] outline-none bg-transparent'>
@@ -230,6 +231,13 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                             </Field>
                                                         </div>
                                                         <ErrorMessage component="div" className=" text-left text-[12px] font-supera500 pl-1 mt-1  text-red-500" name="projectName" />
+                                                    </div>
+                                                )} */}
+                                                {formType === 'bookSiteVisit' && (
+                                                    <div className='flex flex-col max-w-full cmd:max-w-[405px] '>
+                                                        <div className='w-full flex justify-between items-center mt-1 2xl:mt-2 pr-4 py-2.5 text-[#514E4E] bg-transparent border-b-[0.5px] border-[#AFAFAF] font-supera500 text-[15px] 3xl:text-[16px] overflow-hidden '>
+                                                            <Field as="textarea" name="message" placeholder="Message..." className='w-full h-full placeholder:text-[#514E4E] outline-none bg-transparent'></Field>
+                                                        </div>
                                                     </div>
                                                 )}
                                                 <div className=' xl:mt-0'>
@@ -251,7 +259,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                     <div className='mt-3 cmd:mt-5 pl-2 flex'>
                                                         <Field type="checkbox" id="terms" checked={isChecked} onChange={() => setIsChecked(!isChecked)} className='w-[17px] h-[17px] relative top-0.5 border-[#E98F0A] outline-[#E98F0A]' />
                                                         <p className='ml-2.5 max-w-[350px] tracking-wide font-supera500 text-[11px] text-[#737474] text-left'>I agree to receive newsletters, or relevant marketing content and
-                                                            Sushma Group Terms and Conditions</p>
+                                                            Realty Nivesh Terms and Conditions</p>
                                                     </div>
                                                     <button type='submit' onClick={() => { setAction('submitForm') }} disabled={loaderShow} className='mt-5 cmd:mt-10 w-full h-[40px] bg-[#2E72A9] rounded-[20px] text-[#fff] font-supera500 tracking-wide text-[16px]'>
                                                         {loaderShow ? <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div> : `${action == 'submitForm' ? 'Get OTP' : 'Submit'}`}
@@ -311,7 +319,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                 </div>
                                                 <div className='mt-3 xl:mt-4'>
                                                     <div className='flex'>
-                                                        <p className='max-w-[350px] tracking-wide font-supera500 text-[16px] text-[#737474]'>Didn&apos;t get OTP?
+                                                        <p className='max-w-[350px] tracking-wide font-supera500 text-[16px] text-[#958366]'>Didn&apos;t get OTP?
                                                             <button
                                                                 className='ml-1 text-[#E98F0A] font-supera500 hover:underline cursor-pointer'
                                                                 disabled={loaderShow || otpResendLoading}
@@ -324,9 +332,10 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                                             action: 'resendOTP',
                                                                             data: { mobile: `${values?.mobile}` },
                                                                         };
-                                                                        const response = AxiosHelper.postData(`/realtynivesh-enquiry/`, payload)
-                                                                        if (response?.data?.message == 'New OTP sent successfully!') {
-                                                                            toast.success('New OTP sent to your mobile no.');
+                                                                        const response = await AxiosHelper.postData(`/realtynivesh-enquiry/`, payload);
+
+                                                                        if (response?.data?.status) {
+                                                                            toast.success(response?.data?.message || 'New OTP sent to your mobile no.');
                                                                             setOtpResendLoading(false);
                                                                             setLoaderShow(false)
                                                                         } else {
@@ -360,16 +369,15 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                         {thankYou && (
                                             <div className='cxs:pt-5 lg:pt-0 lg:pl-8 xl:pl-16 w-full h-full flex flex-col justify-start'>
                                                 <div className='mt-5 flex flex-col gap-10 w-full h-full'>
-                                                    <h5 className='font-supera500 text-[15px] text-[#514E4E] tracking-wide pr-6 2xl:pr-0'>Meanwhile you can continue exploring more about Sushma Group</h5>
+                                                    <h5 className='font-supera500 text-[15px] text-[#514E4E] tracking-wide pr-6 2xl:pr-0'>Meanwhile you can continue exploring more about Realty Nivesh</h5>
 
                                                     <div>
                                                         <ul className='flex flex-wrap gap-x-8 xs:gap-x-16 gap-y-3'>
-                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#products" onClick={() => handleClose()} className="w-full h-full">Offers</Link></li>
-                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="/projects" className="w-full h-full">Our projects</Link></li>
-                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#service-part" onClick={() => handleClose()} className="w-full h-full">Sushma Service Partner</Link></li>
                                                             <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#About-Us" onClick={() => handleClose()} className="w-full h-full">About Us</Link></li>
-                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#FAQ" onClick={() => handleClose()} className="w-full h-full">FAQ</Link></li>
-                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#our-story" onClick={() => handleClose()} className="w-full h-full">Our Stories</Link></li>
+                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#what-we-do" className="w-full h-full">What We Do</Link></li>
+                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#why-realtynivesh" onClick={() => handleClose()} className="w-full h-full">Why Choose Us</Link></li>
+                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#rcih" onClick={() => handleClose()} className="w-full h-full">Featured Projects</Link></li>
+                                                            <li className='font-supera600 text-[17px] text-[#E98F0A]'><Link href="#contact-us" onClick={() => handleClose()} className="w-full h-full">Contact Us</Link></li>
                                                         </ul>
                                                     </div>
 
