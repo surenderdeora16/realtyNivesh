@@ -13,7 +13,7 @@ import 'react-phone-number-input/style.css'
 import PhoneInput, { getCountryCallingCode } from 'react-phone-number-input'
 import Link from 'next/link';
 import AxiosHelper from '@/app/AxiosHelper';
-
+import { useRouter } from 'next/navigation';
 
 const getPropertyHeadings = (data) => {
     const headings = [];
@@ -32,6 +32,7 @@ const getPropertyHeadings = (data) => {
 };
 
 const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => { }, eventSource = '', onFormSubmit = () => { }, funcParameter }) => {
+    const router = useRouter();
     const [value, setValue] = useState('')
     const [action, setAction] = useState('submitForm');
     const [countryCode, setCountryCode] = useState('+ 91');
@@ -161,6 +162,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                 setAction('submitForm');
                                                 setLoaderShow(false)
                                                 setThankYou(true)
+                                                router.push('/?req=thankyou');
                                                 if (onFormSubmit) {
                                                     onFormSubmit(funcParameter);
                                                 }
@@ -275,12 +277,12 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                         <div className="mb-5">
                                                             <div className='font-supera500 text-[#484A4B] text-[13px] cxs:text-[14px] lg:text-[15px] cxs:flex cxs:items-center 2xl:whitespace-nowrap'>
                                                                 Please enter the OTP sent to {editingNumber}
-                                                                <button
-                                                                    className='pl-1 xs:pl-1.5 xs:whitespace-nowrap text-[#E98F0A] hover:underline text-[13px] cxs:text-[14px] lg:text-[15px] tracking-wide font-supera500'
+                                                                <div
+                                                                    className='cursor-pointer pl-1 xs:pl-1.5 xs:whitespace-nowrap text-[#E98F0A] hover:underline text-[13px] cxs:text-[14px] lg:text-[15px] tracking-wide font-supera500'
                                                                     onClick={() => { changePhoneNumber(); setFieldValue('otp', ''); }}
                                                                 >
                                                                     Change
-                                                                </button>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className='flex item-center justify-between mt-2 w-full'>
@@ -322,6 +324,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
                                                         <p className='max-w-[350px] tracking-wide font-supera500 text-[16px] text-[#958366]'>Didn&apos;t get OTP?
                                                             <button
                                                                 className='ml-1 text-[#E98F0A] font-supera500 hover:underline cursor-pointer'
+                                                                type="button"
                                                                 disabled={loaderShow || otpResendLoading}
                                                                 onClick={async () => {
                                                                     try {
