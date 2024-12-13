@@ -38,7 +38,7 @@ const EnquiryForm = ({ formType, heading, propertyLogo, isOpen, onClose = () => 
     const [countryCode, setCountryCode] = useState('+ 91');
     const [loaderShow, setLoaderShow] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(true);
     const [otp, setOtp] = useState('');  // OTP input state
     const [showOtpInput, setShowOtpInput] = useState(false);  // Toggle OTP input visibility
     const [message, setMessage] = useState('');
